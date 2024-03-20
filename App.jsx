@@ -1,5 +1,5 @@
 import { StatusBar, View, StyleSheet } from 'react-native'
-import { Inicial } from './src/telas/Inicial'
+import { Contatos } from './src/telas/Contatos'
 import { Cabecalho } from './src/componentes/Cabecalho'
 
 export default function App() {
@@ -7,7 +7,7 @@ export default function App() {
     <View style={estilos.conteiner}>
       <StatusBar barStyle='default' />
       <Cabecalho />
-      <Inicial />
+      <Contatos />
     </View>
   );
 }

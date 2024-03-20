@@ -11,7 +11,7 @@ export function Cabecalho(){
 const estilos = StyleSheet.create({
     conteiner: {
         height: 55,
-        backgroundColor: '#011828',
+        backgroundColor: '#01233c',
         justifyContent: 'center',
         alignItems: 'center'
     },

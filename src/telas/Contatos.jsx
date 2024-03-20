@@ -4,7 +4,7 @@ import { Formulario } from '../componentes/Formulario'
 import { Lista } from "../componentes/Lista"
 import uuid from 'react-native-uuid'
 
-export function Inicial(){ 
+export function Contatos(){ 
 
     const [listaContatos, setListaContatos] = useState([])
 
