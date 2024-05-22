@@ -1,11 +1,11 @@
 import { StatusBar, View, StyleSheet } from 'react-native'
-import { Contatos } from './src/telas/Contatos'
+import { RotasStack } from './src/rotas/RotasStack'
 
 export default function App() {
   return (
     <View style={estilos.conteiner}>
       <StatusBar barStyle='default' />
-      <Contatos />
+      <RotasStack />
     </View>
   );
 }
