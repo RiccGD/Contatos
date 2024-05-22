@@ -10,13 +10,11 @@
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.0.15",
-    "expo": "^50.0.13",
+    "expo": "^50.0.17",
     "expo-status-bar": "~1.11.1",
-    "phosphor-react-native": "^2.0.0",
     "react": "18.2.0",
-    "react-native": "0.73.4",
-    "react-native-uuid": "^2.0.1",
-    "yet": "^0.1.0"
+    "react-native": "^0.73.6",
+    "react-native-uuid": "^2.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.23.9"
