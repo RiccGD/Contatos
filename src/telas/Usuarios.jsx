@@ -1,6 +1,7 @@
 import { View } from "react-native";
 import { Cabecalho } from '../componentes/Cabecalho'
 import uuid from 'react-native-uuid'
+import { useNavigation } from "@react-navigation/native";
 
 
 /**
@@ -10,6 +11,12 @@ import uuid from 'react-native-uuid'
  */
 
 export function Usuarios(){
+
+    const navegacao = useNavigation()
+    function novoUsuario(){
+        navegacao.navigate('login')
+    }/*chamar função no botao de cadastro que ainda não fiz*/
+
 
     const [listaContatos, setListaContatos] = useState([])
 
@@ -39,6 +46,7 @@ export function Usuarios(){
 
 const estilos = StyleSheet.create({
     conteiner: {
-        flex: 1
+        flex: 1,
+        backgroundColor: '#000'
     }
 })

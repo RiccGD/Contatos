@@ -15,6 +15,7 @@ export function Inicial(){
 
 const estilos = StyleSheet.create({
     conteiner: {
-        flex: 1
+        flex: 1,
+        backgroundColor: '#000'
     }
 })
