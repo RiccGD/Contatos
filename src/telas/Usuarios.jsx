@@ -4,49 +4,88 @@ import uuid from 'react-native-uuid'
 import { useNavigation } from "@react-navigation/native";
 
 
-/**
- * Nome
- * Email
- * Senha
- */
 
 export function Usuarios(){
 
+    const [nome, setNome] = useState('')
+    const [email, setEmail] = useState('')
+    const [senha, setSenha] = useState('')
+
     const navegacao = useNavigation()
-    function novoUsuario(){
-        navegacao.navigate('login')
-    }/*chamar função no botao de cadastro que ainda não fiz*/
 
-
-    const [listaContatos, setListaContatos] = useState([])
-
-    function adicionarContato(nome,email, senha){
-
-        let novoContato = {
-            codigo: uuid.v4(),
-            nome: nome,
-            senha: senha,
-            email: email
-        } 
-
-        setListaContatos([...listaContatos, novoContato])
+    function adicionarUsuario(){
+        navegacao.navigate('login')        
     }
-
 
     return(
         <>
-          <Cabecalho titulo="Usuarios" />
-          <View style={estilos.conteiner}>
-          <Formulario 
-                  adicionar={adicionarContato}
-              />
-          </View>
+            <Cabecalho titulo="Usuários" />
+            <View style={estilos.conteiner}>
+
+                <TextInput
+                    style={estilos.campo}
+                    placeholder='Nome' 
+                    placeholderTextColor='#e1e5f2'
+                    onChangeText={setNome}
+                    value={nome}
+                />
+                <TextInput 
+                    style={estilos.campo}
+                    placeholder='Email'
+                    placeholderTextColor='#e1e5f2'
+                    keyboardType='email-address'
+                    onChangeText={setEmail}
+                    value={email}      
+                />
+                <TextInput 
+                    style={estilos.campo}
+                    placeholder='Senha'
+                    placeholderTextColor='#e1e5f2'              
+                    onChangeText={setSenha}
+                    value={senha}
+                />
+
+                <TouchableOpacity 
+                    style={estilos.botao}
+                    onPress={adicionarUsuario}
+                >
+                    <Text style={estilos.textoBotao}>Confirmar</Text>
+                </TouchableOpacity>
+
+            </View>
         </>
-)}
+    )
+}
 
 const estilos = StyleSheet.create({
     conteiner: {
         flex: 1,
-        backgroundColor: '#000'
-    }
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#000',
+        marginTop: -55
+    },
+    campo: {
+        height: 50,
+        width: 300,
+        backgroundColor: '#01233c',
+        color: '#a9d6e5',
+        marginVertical: 5,
+        borderRadius: 5,
+        padding: 10,
+        fontSize: 16,
+    },
+    botao: {
+        height: 50,
+        width: 300,
+        backgroundColor: '#01233c',
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 5,
+        marginVertical: 10,
+    },   
+    textoBotao: {
+        color: '#a9d6e5',
+        fontSize: 16,
+    } 
 })
