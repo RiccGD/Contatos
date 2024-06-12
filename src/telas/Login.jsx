@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import {View, Text, TextInput, TouchableOpacity, StyleSheet} from 'react-native'
+import {View, Text, TextInput, TouchableOpacity, Image, StyleSheet} from 'react-native'
 import {useNavigation} from '@react-navigation/native'
 
 export function Login(){
@@ -10,7 +10,7 @@ export function Login(){
     const navegacao = useNavigation()
 
     function autenticarUsuario(){
-        navegacao.navigate('inicial')
+        navegacao.navigate('autenticado')
     }
 
     function novoUsuario(){
@@ -20,38 +20,46 @@ export function Login(){
     return(
         <View style={estilos.conteiner}>
 
-            <TextInput 
-                style={estilos.campo}
-                placeholder='Email'
-                placeholderTextColor='#e1e5f2'
-                keyboardType='email-address'
-                onChangeText={setEmail}
-                value={email}      
-            />
-            <TextInput 
-                style={estilos.campo}
-                placeholder='Senha'
-                placeholderTextColor='#e1e5f2'              
-                onChangeText={setSenha}
-                value={senha}
+            <Image 
+                style={estilos.logo}
+                source={require('../../assets/logo.jpg')}
             />
 
-            <TouchableOpacity 
-                style={estilos.botao}
-                onPress={autenticarUsuario}
-            >
-                <Text style={estilos.textoBotao}>Entrar</Text>
-            </TouchableOpacity>
+            <View style={estilos.formularioConteiner}>
 
-            <TouchableOpacity 
-                style={estilos.cadastro}
-                onPress={novoUsuario}
-            >
-                <Text style={estilos.textoBotao}>Cadastre-se</Text>
-            </TouchableOpacity>
+                <TextInput 
+                    style={estilos.campo}
+                    placeholder='Email'
+                    placeholderTextColor='#e1e5f2'
+                    keyboardType='email-address'
+                    onChangeText={setEmail}
+                    value={email}      
+                />
+                <TextInput 
+                    style={estilos.campo}
+                    placeholder='Senha'
+                    placeholderTextColor='#e1e5f2'              
+                    onChangeText={setSenha}
+                    value={senha}
+                />
+
+                <TouchableOpacity 
+                    style={estilos.botao}
+                    onPress={autenticarUsuario}
+                >
+                    <Text style={estilos.textoBotao}>Entrar</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity 
+                    style={estilos.cadastro}
+                    onPress={novoUsuario}
+                >
+                    <Text style={estilos.textoBotao}>Cadastre-se</Text>
+                </TouchableOpacity>
+
+            </View>
 
         </View>
-
     )
 }
 
@@ -60,7 +68,7 @@ const estilos = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#000',
+        backgroundColor: '#000'
     },
     campo: {
         height: 50,
@@ -71,6 +79,8 @@ const estilos = StyleSheet.create({
         borderRadius: 5,
         padding: 10,
         fontSize: 16,
+        borderWidth: 1,
+        borderColor: '#0077b6',
     },
     botao: {
         height: 50,
@@ -80,6 +90,8 @@ const estilos = StyleSheet.create({
         alignItems: 'center',
         borderRadius: 5,
         marginVertical: 10,
+        borderWidth: 1,
+        borderColor: '#0077b6',
     },   
     textoBotao: {
         color: '#a9d6e5',
@@ -91,4 +103,12 @@ const estilos = StyleSheet.create({
         borderRadius: 5,
         marginVertical: 10,
     },
+    logo: {     
+        height: 400,
+    },
+    formularioConteiner: {
+        flex: 1,
+        marginTop: -30
+    },
+
 })

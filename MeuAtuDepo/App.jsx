@@ -1,5 +1,5 @@
-import {StatusBar, View, StyleSheet} from 'react-native'
-import {RotasStack} from './src/rotas/RotasStack'
+import { StatusBar, View, StyleSheet } from 'react-native'
+import { RotasStack } from './src/rotas/RotasStack'
 
 export default function App() {
   return (
@@ -13,5 +13,6 @@ export default function App() {
 const estilos = StyleSheet.create({
     conteiner: {
       flex: 1,
+      backgroundColor: '#000',
     },
   });

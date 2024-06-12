@@ -1,7 +1,9 @@
-import {useState} from 'react'
-import {View, Text, TextInput, TouchableOpacity, StyleSheet} from 'react-native'
-import {useNavigation} from '@react-navigation/native'
-import {Cabecalho} from '../componentes/Cabecalho'
+import { View } from "react-native";
+import { Cabecalho } from '../componentes/Cabecalho'
+import uuid from 'react-native-uuid'
+import { useNavigation } from "@react-navigation/native";
+
+
 
 export function Usuarios(){
 
@@ -61,6 +63,7 @@ const estilos = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#000',
+        marginTop: -55
     },
     campo: {
         height: 50,
