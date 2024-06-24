@@ -2,7 +2,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
 import {Inicial} from '../telas/Inicial'
 import {Contatos} from '../telas/Contatos'
 import {Usuarios} from '../telas/Usuarios'
-import {Configuracoes} from '../telas/Configuracoes'
+import {Sobre} from '../telas/Sobre'
 import { MaterialIcons } from '@expo/vector-icons'
 
 const {Navigator, Screen} = createBottomTabNavigator()
@@ -55,8 +55,8 @@ export function RotasTab(){
             />
 
             <Screen 
-                name='configuracoes'
-                component={Configuracoes}
+                name='Sobre'
+                component={Sobre}
                 options={{
                     tabBarIcon: ({size, color}) => (
                         <MaterialIcons name="settings" size={size} color={color} />

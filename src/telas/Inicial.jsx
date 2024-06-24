@@ -24,7 +24,7 @@ export function Inicial(){
                 <Cartao 
                     titulo="Configurações" 
                     imagem={require('../../assets/roxo.jpg')}
-                    destino="configuracoes"
+                    destino="Sobre"
                 />
 
             </ImageBackground>

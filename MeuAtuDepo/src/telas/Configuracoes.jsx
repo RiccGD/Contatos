@@ -2,7 +2,7 @@ import { View } from "react-native";
 import { Cabecalho } from '../componentes/Cabecalho'
 
 
-export function Configuracoes(){
+export function Sobre(){
     return(
         <>
           <Cabecalho titulo="Configurações" />
